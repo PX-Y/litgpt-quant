@@ -7,9 +7,9 @@
 ## Project Layout
 
 - **量化库**：`qat_prox2/`
-- **主训练脚本**：`full_sens_quant2.py`  
+- **主训练脚本**：`full_sens_quant2.py`，`full_sens_quant3.py`  
   用于替代 LitGPT 原始的 full finetune 脚本（以便接入 dist_loss、gamma/dual 控制器、sensitivity 等模块）。
-
+  3是按照文档更新了x的迭代方法版本，但还没有找到一个大致的参数范围。
 ---
 
 ## Quantization Library (`qat_prox2/`)
@@ -68,7 +68,7 @@ $$g^2 = \frac{1}{M} \sum_{i=1}^{M} (\nabla w_i)^2$$
 $$S_{t} = \beta \cdot S_{t-1} + (1 - \beta) \cdot g^2_t$$
 
 ### config
-   参数统计列表
+   参数统计列表（大部分参数都可以再此处修改）
 
 ---
 
@@ -89,7 +89,7 @@ $$S_{t} = \beta \cdot S_{t-1} + (1 - \beta) \cdot g^2_t$$
 ```python
 from pathlib import Path
 
-from litgpt.finetune.full_sens_quant2 import setup
+from litgpt.finetune.full_sens_quant3 import setup
 from litgpt.args import TrainArgs, EvalArgs
 from litgpt.data import Alpaca
 
