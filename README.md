@@ -36,7 +36,7 @@
 
 
 
-2.DualController 
+2. DualController 
  控制拉格朗日乘子 lambda。
 
 前期的`f-beta`不稳定，导致`lambda` 波动较大。考虑PI控制算法（用积分表示f-beta,保持lambd稳定）
