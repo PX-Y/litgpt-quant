@@ -84,7 +84,7 @@ $$S_{t} = \beta \cdot S_{t-1} + (1 - \beta) \cdot g^2_t$$
 
 ### 1) Minimal Training Script Example
 
-下面示例展示如何从项目内调用 `setup(...)` 进行训练：
+下面示例展示如何从项目内调用 `setup(...)` 进行训练（具体参考run.py）：
 
 ```python
 from pathlib import Path
