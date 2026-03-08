@@ -7,9 +7,10 @@
 ## Project Layout
 
 - **量化库**：`qat_prox2/`
-- **主训练脚本**：`full_sens_quant2.py`，`full_sens_quant3.py`  
+- **主训练脚本**：`full_sens_quant2.py`，`full_sens_quant3.py`  `full_sens_quant12.py`  
   用于替代 LitGPT 原始的 full finetune 脚本（以便接入 dist_loss、gamma/dual 控制器、sensitivity 等模块）。
   3是按照文档更新了x的迭代方法版本，但还没有找到一个大致的参数范围。
+  指标解释：`train_loss_q` 一个训练batch的量化点f(q(x))的loss。  `loss_fq`迭代后的浮点f(x)的loss。`full_train_loss_q`整个训练集上的f(q(x))loss。 `val_fqx`验证集子集的f(q(x))loss。 `full_val_loss_q`整个验证集的f(q(x))loss
 ---
 
 ## Quantization Library (`qat_prox2/`)
